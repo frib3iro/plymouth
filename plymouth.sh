@@ -9,13 +9,6 @@ yellow='\e[33;1m'
 end='\e[m'
 seta='\e[32;1m==>\e[m'
 
-# Funções ---------------------------------------------
-funcao1(){
-}
-
-funcao2(){
-}
-
 # Tela de boas vindas
 clear
 echo -e "${seta} ${blue}Bem vindo a instalação plymouth no Arch Linux${end}"
@@ -39,29 +32,23 @@ sudo vim /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 clear
 
-echo -e "${seta} ${blue}${end}"
+echo -e "${seta} ${blue}Escolha seu tema${end}"
 sleep 2s
 sudo plymouth-set-default-theme -l
 sudo plymouth-set-default-theme -R spinfinity
 clear
 
-echo -e "${seta} ${blue}${end}"
+echo -e "${seta} ${blue}Desabilitando o gdm e habilitando o gdm-plymouth${end}"
 sleep 2s
 sudo systemctl disable gdm.service
 sudo systemctl enable gdm-plymouth.service
 clear
 
-echo -e "${seta} ${blue}${end}"
+echo -e "${seta} ${blue}Editando plymouthd.conf${end}"
 sleep 2s
 sudo vim /etc/plymouth/plymouthd.conf
 sudo mkinitcpio -p linux
 clear
 
 reboot
-
-echo -e "${seta} ${blue}${end}"
-sleep 2s
-yay -S grub-silent
-vim /etc/default/grub
-clear
 
