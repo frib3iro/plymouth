@@ -1,5 +1,3 @@
-# git
-Shell script para instalação do arch linux
-# deepin
-# deepin
 # plymouth
+Shell script para instalação do plymouth no arch linux
+
